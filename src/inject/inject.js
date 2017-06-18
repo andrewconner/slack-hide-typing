@@ -7,6 +7,9 @@ chrome.extension.sendMessage({}, function(response) {
     scr.textContent = '(function() {' +
       '  if (window.TS && window.TS.ds) {' +
       '    window.TS.ds.sendTyping = function () {};' +
+      '  }' +
+      '  if (window.TS && window.TS.typing) {' +
+      '    window.TS.typing.userStarted = function () {};' +
       '    window.dispatchEvent(new CustomEvent("TSLoaded", {}));' +
       '  }' +
       '})();';
