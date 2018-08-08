@@ -5,12 +5,8 @@ chrome.extension.sendMessage({}, function(response) {
     // Necessary because extensions cannot directly access the page's global variables.
     const scr = document.createElement('script');
     scr.textContent = '(function() {' +
-      '  if (window.TS && window.TS.ds) {' +
-      '    window.TS.ds.sendTyping = function () {};' +
-      '  }' +
-      '  if (window.TS && window.TS.typing) {' +
-      '    window.TS.typing.userStarted = function () {};' +
-      '    window.dispatchEvent(new CustomEvent("TSLoaded", {}));' +
+      '  if (window.TS && window.TS.interop && window.TS.interop.typing) {' +
+      '    window.TS.interop.typing.currentUserStartedTyping = function(){ return function(){}};' +
       '  }' +
       '})();';
     (document.head || document.documentElement).appendChild(scr);
