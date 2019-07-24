@@ -1,6 +1,6 @@
 {
   "name": "Slack Hide Typing",
-  "version": "1.2.1",
+  "version": "2.0.0",
   "manifest_version": 2,
   "description": "This lightweight extension prevents Slack from sending a typing status to channels and private messages.",
   "homepage_url": "http://www.andrewconner.org/slack-hide-typing",
@@ -16,7 +16,7 @@
   "content_scripts": [
     {
       "matches": [
-        "https://*.slack.com/messages/*"
+        "https://*.slack.com/*"
       ],
       "js": [
         "src/inject/inject.js"
