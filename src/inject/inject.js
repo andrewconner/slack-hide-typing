@@ -21,7 +21,7 @@
       const args = [].slice.call(arguments, 0);
       try {
         const parsed = JSON.parse(args[0] || '{}');
-        if (parsed.type === 'typing') {
+        if (parsed.type === 'user_typing') {
           return;
         }
       } catch(ex) {}
